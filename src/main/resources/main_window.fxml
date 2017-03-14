@@ -5,33 +5,28 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thiagoh.comp228.lab04.ex02.MainWindowController">
    <children>
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
          <children>
-            <TextField layoutX="239.0" layoutY="12.0" prefHeight="27.0" prefWidth="314.0" />
+            <TextField fx:id="textFieldName" layoutX="239.0" layoutY="12.0" prefHeight="27.0" prefWidth="314.0" />
             <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="Name: " />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="What shape to draw?" />
-            <RadioButton layoutX="276.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Rectangle">
-               <toggleGroup>
-                  <ToggleGroup fx:id="shapeToDraw" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton layoutX="393.0" layoutY="17.0" mnemonicParsing="false" text="Square" toggleGroup="$shapeToDraw" />
-            <RadioButton layoutX="490.0" layoutY="17.0" mnemonicParsing="false" text="Circle" toggleGroup="$shapeToDraw" />
+            <RadioButton fx:id="radioShapeRectangle" layoutX="276.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Rectangle" />
+            <RadioButton fx:id="radioShapeSquare" layoutX="393.0" layoutY="17.0" mnemonicParsing="false" text="Square" />
+            <RadioButton fx:id="radipShapeCircle" layoutX="490.0" layoutY="17.0" mnemonicParsing="false" text="Circle" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="What to color?" />
-            <CheckBox layoutX="282.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Background" />
-            <CheckBox layoutX="394.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Fill" />
-            <CheckBox layoutX="486.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Line" />
+            <CheckBox fx:id="checkboxColorBackground" layoutX="282.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Background" />
+            <CheckBox fx:id="checkboxColorFill" layoutX="394.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Fill" />
+            <CheckBox fx:id="checkboxColorLine" layoutX="486.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Line" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
@@ -48,7 +43,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="75.0" prefWidth="564.0">
          <children>
-            <Button layoutX="20.0" layoutY="24.0" mnemonicParsing="false" text="Submit" />
+            <Button layoutX="20.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
          </children>
       </AnchorPane>
    </children>

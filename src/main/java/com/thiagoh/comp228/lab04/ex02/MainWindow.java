@@ -3,6 +3,8 @@ package com.thiagoh.comp228.lab04.ex02;
 import java.io.InputStream;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -29,6 +31,12 @@ public class MainWindow extends Application {
 		stage.setScene(new Scene(root, 570, 360));
 		stage.setResizable(false);
 		stage.show();
+
+	}
+
+	@FXML
+	public void handleSubmitButtonAction(ActionEvent e) {
+		System.out.println("nhaaaaaaaaa");
 	}
 
 	public static void main(String[] args) {
