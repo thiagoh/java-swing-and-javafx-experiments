@@ -1,4 +1,4 @@
-package com.thiagoh.comp228;
+package com.thiagoh.comp228.lab04.ex01;
 import java.awt.Color;
 import java.awt.Graphics;
 
