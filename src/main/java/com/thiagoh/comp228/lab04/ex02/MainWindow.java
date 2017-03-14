@@ -26,7 +26,8 @@ public class MainWindow extends Application {
 		Parent root = fxmlLoader.load(resource);
 
 		stage.setTitle("Shapes");
-		stage.setScene(new Scene(root, 550, 360));
+		stage.setScene(new Scene(root, 570, 360));
+		stage.setResizable(false);
 		stage.show();
 	}
 

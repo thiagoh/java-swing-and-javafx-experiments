@@ -17,9 +17,26 @@
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="What shape to draw?" />
-            <RadioButton layoutX="276.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Rectangle" />
-            <RadioButton layoutX="393.0" layoutY="17.0" mnemonicParsing="false" text="Square" />
-            <RadioButton layoutX="490.0" layoutY="17.0" mnemonicParsing="false" text="Circle" />
+            <RadioButton layoutX="276.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Rectangle">
+               <toggleGroup>
+                  <ToggleGroup fx:id="shapeToDraw" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="393.0" layoutY="17.0" mnemonicParsing="false" text="Square" toggleGroup="$shapeToDraw" />
+            <RadioButton layoutX="490.0" layoutY="17.0" mnemonicParsing="false" text="Circle" toggleGroup="$shapeToDraw" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="51.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="What to color?" />
+            <CheckBox layoutX="282.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Background" />
+            <CheckBox layoutX="394.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Fill" />
+            <CheckBox layoutX="486.0" layoutY="17.0" mnemonicParsing="false" selected="true" text="Line" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="51.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="What color of line?" />
          </children>
       </AnchorPane>
    </children>
