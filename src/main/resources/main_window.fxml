@@ -32,7 +32,7 @@
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
          <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="17.0" text="What color of line?" />
-            <ComboBox layoutX="233.0" layoutY="12.0" prefHeight="27.0" prefWidth="314.0" />
+            <ComboBox fx:id="comboboxLineColor" layoutX="233.0" layoutY="12.0" prefHeight="27.0" prefWidth="314.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="51.0" prefWidth="600.0">
