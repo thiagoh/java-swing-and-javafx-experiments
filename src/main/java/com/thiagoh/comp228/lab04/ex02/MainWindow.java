@@ -24,7 +24,6 @@ public class MainWindow extends Application {
 		}
 
 		FXMLLoader fxmlLoader = new FXMLLoader();
-
 		Parent root = fxmlLoader.load(resource);
 
 		stage.setTitle("Shapes");
