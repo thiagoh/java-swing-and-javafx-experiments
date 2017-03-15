@@ -60,7 +60,12 @@ public class MainWindowController implements Initializable {
 
 			InputStream resource = classloader.getResourceAsStream("response_window.fxml");
 
+			if (resource == null) {
+				throw new IllegalStateException("Could not find the window definition");
+			}
+
 			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setController(new ResponseWindowController(this));
 			Parent root = fxmlLoader.load(resource);
 
 			Stage stage = new Stage();
@@ -74,7 +79,7 @@ public class MainWindowController implements Initializable {
 
 			Alert alert = new Alert(AlertType.ERROR, ex.getMessage());
 			alert.showAndWait();
-			
+
 			ex.printStackTrace();
 		}
 	}

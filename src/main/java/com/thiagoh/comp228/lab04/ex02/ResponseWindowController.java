@@ -27,8 +27,8 @@ public class ResponseWindowController implements Initializable {
 	private MainWindowController main;
 	private Shape jPanelShape = null;
 
-	public ResponseWindowController(MainWindowController main) {
-		this.main = main;
+	public ResponseWindowController(MainWindowController mainWindowController) {
+		this.main = mainWindowController;
 	}
 
 	@Override
