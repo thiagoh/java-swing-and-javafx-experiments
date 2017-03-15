@@ -96,9 +96,6 @@ public class ResponseWindowController implements Initializable {
 		anchorPaneMiddle.getChildren().add(node);
 		anchorPaneMiddle.setPrefHeight(dimension.getHeight());
 		anchorPaneMiddle.setPrefWidth(dimension.getWidth());
-		// anchorPaneMiddle.setBackground(new Background(
-		// new BackgroundFill(javafx.scene.paint.Color.rgb(17, 119, 255),
-		// CornerRadii.EMPTY, Insets.EMPTY)));
 
 		node.setContent(jPanelShape);
 	}
