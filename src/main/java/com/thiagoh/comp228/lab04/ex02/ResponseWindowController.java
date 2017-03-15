@@ -1,6 +1,7 @@
 package com.thiagoh.comp228.lab04.ex02;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -13,13 +14,21 @@ import com.thiagoh.comp228.lab04.util.GetterUtil;
 import javafx.embed.swing.SwingNode;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 
 /**
  *
  * @author thiagoh
  */
 public class ResponseWindowController implements Initializable {
+
+	@FXML
+	private Label labelName;
 
 	@FXML
 	private AnchorPane anchorPaneMiddle;
@@ -39,6 +48,8 @@ public class ResponseWindowController implements Initializable {
 		if (userName.trim().isEmpty()) {
 			throw new IllegalStateException("Name cannot be empty");
 		}
+
+		labelName.setText(userName);
 
 		String shapeType = GetterUtil.getString(main.getShapeType()).toLowerCase();
 
@@ -71,8 +82,19 @@ public class ResponseWindowController implements Initializable {
 		description.append("\nisBackColored=").append(isBackColored ? "true" : "false");
 
 		SwingNode node = new SwingNode();
-		node.setContent(jPanelShape);
+
+		Dimension dimension = new Dimension(550, 300);
+		jPanelShape.setSize(dimension);
+		jPanelShape.setPreferredSize(dimension);
+
 		anchorPaneMiddle.getChildren().add(node);
+		anchorPaneMiddle.setPrefHeight(dimension.getHeight());
+		anchorPaneMiddle.setPrefWidth(dimension.getWidth());
+		// anchorPaneMiddle.setBackground(new Background(
+		// new BackgroundFill(javafx.scene.paint.Color.rgb(17, 119, 255),
+		// CornerRadii.EMPTY, Insets.EMPTY)));
+
+		node.setContent(jPanelShape);
 	}
 
 }

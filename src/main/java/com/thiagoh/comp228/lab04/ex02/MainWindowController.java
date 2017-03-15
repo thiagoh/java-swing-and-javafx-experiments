@@ -27,6 +27,8 @@ import javafx.stage.Stage;
 
 public class MainWindowController implements Initializable {
 
+	private Stage responseWindow;
+
 	@FXML
 	private RadioButton radioShapeRectangle;
 	@FXML
@@ -66,18 +68,29 @@ public class MainWindowController implements Initializable {
 
 			FXMLLoader fxmlLoader = new FXMLLoader();
 			fxmlLoader.setController(new ResponseWindowController(this));
+
 			Parent root = fxmlLoader.load(resource);
 
-			Stage stage = new Stage();
+			if (responseWindow != null) {
+				responseWindow.close();
+			}
 
-			stage.setTitle("Result");
-			stage.setScene(new Scene(root, 360, 550));
-			stage.setResizable(false);
-			stage.show();
+			responseWindow = new Stage();
+
+			responseWindow.setTitle("Result");
+			responseWindow.setScene(new Scene(root, 360, 550));
+			responseWindow.setResizable(false);
+			responseWindow.show();
 
 		} catch (IOException ex) {
 
-			Alert alert = new Alert(AlertType.ERROR, ex.getMessage());
+			Throwable cause = ex;
+
+			if (ex.getCause() != null) {
+				cause = ex.getCause();
+			}
+
+			Alert alert = new Alert(AlertType.ERROR, cause.getMessage());
 			alert.showAndWait();
 
 			ex.printStackTrace();
