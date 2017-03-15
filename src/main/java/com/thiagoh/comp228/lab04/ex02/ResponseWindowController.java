@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -29,6 +30,9 @@ public class ResponseWindowController implements Initializable {
 
 	@FXML
 	private Label labelName;
+
+	@FXML
+	private TextArea textAreaDescription;
 
 	@FXML
 	private AnchorPane anchorPaneMiddle;
@@ -80,6 +84,8 @@ public class ResponseWindowController implements Initializable {
 		description.append("\nisFilled=").append(isFilled ? "true" : "false");
 		description.append("\nisOutlined=").append(isOutlined ? "true" : "false");
 		description.append("\nisBackColored=").append(isBackColored ? "true" : "false");
+
+		textAreaDescription.setText(description.toString());
 
 		SwingNode node = new SwingNode();
 
