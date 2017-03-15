@@ -33,19 +33,4 @@ public class MainWindow extends Application {
 
 	}
 
-	@FXML
-	public void handleSubmitButtonAction(ActionEvent e) {
-		System.out.println("nhaaaaaaaaa");
-	}
-
-	public static void main(String[] args) {
-		try {
-
-			Application.launch(MainWindow.class, args);
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-	}
 }

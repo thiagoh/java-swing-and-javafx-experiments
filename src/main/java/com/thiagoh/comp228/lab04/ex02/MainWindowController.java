@@ -54,7 +54,6 @@ public class MainWindowController implements Initializable {
 
 	@FXML
 	public void handleSubmitButtonAction(ActionEvent e) {
-		System.out.println(textFieldName.getText());
 
 		try {
 
